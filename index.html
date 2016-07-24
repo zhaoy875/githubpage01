@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!-- particles.js demo -->
+  <title>zhaoy</title>
+  <meta name="description" content="js粒子库,particles.js is a lightweight JavaScript library for creating particles.">
+  <meta name="author" content="Vincent Garreau" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" media="screen" href="css/style.css">
+  <style type="text/css">
+  body{position:relative;}
+  #particles-js{
+  	background:rgba(20, 20, 20, 0.3);
+  }
+	.indexpage{
+		position:absolute;
+		top:70px;left:0;
+		/*border: 5px solid #353232;*/
+		border-radius: 20px;
+		width: 90%;
+		margin: auto 5%;
+		background:rgba(155, 155, 155, 0.5);
+		font-size:16px;
+		padding:1em;
+		box-sizing: border-box;
+	}
+	.zy_title{
+		font-size:30px;
+		font-family:"Open Sans Light","Microsoft Jhenghei","Helvetica","Microsoft Yahei","Arial","sans-serif","Tahoma";
+		text-align:center;
+		color:#fff;
+		text-shadow:0 0 2px #c6f;
+		margin: 0.5em 0;
+	}
+	.myinfo{
+		height:300px;
+		width:270px;
+		overflow-y:auto;
+		border:1px solid #ccc;
+	}
+
+
+	.myinfo::-webkit-scrollbar {
+    width: 10px;
+    height: 8px;
+    background-color: rgba(92,131,239,.77);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+	}
+	.myinfo::-webkit-scrollbar-thumb {
+    background-color: rgba(235,87,86,.73);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+	}
+  </style>
+</head>
+<body>
+
+<div class="indexpage">
+	
+	<div class="zy_title">前端开发</div>
+	<div class="myinfo">
+		<!-- ul>li.item*5>dl>dt.title+dd.value -->
+		<ul>
+			<li class="item">
+				<dl>
+					<dt class="title">姓名</dt>
+					<dd class="value">zy</dd>
+				</dl>
+			</li>
+			<li class="item">
+				<dl>
+					<dt class="title">年龄</dt>
+					<dd class="value">23</dd>
+				</dl>
+			</li>
+			<li class="item">
+				<dl>
+					<dt class="title">求职目标</dt>
+					<dd class="value">前端工程师</dd>
+				</dl>
+			</li>
+			<li class="item">
+				<dl>
+					<dt class="title">工作经验</dt>
+					<dd class="value">1年</dd>
+				</dl>
+			</li>
+			<li class="item">
+				<dl>
+					<dt class="title">专业技能</dt>
+					<dd class="value">css3,html5,javascript</dd>
+					<dd class="value">js库jquery,前端ui框架bootstrap,react+vue.js</dd>
+					<dd class="value">较丰富的移动端适配及移动端浏览器兼容性处理经验</dd>
+					<dd class="value">前端工程自动化gulp</dd>
+				</dl>
+			</li>
+		</ul>
+	</div>
+
+
+</div>
+
+<!-- count particles -->
+<div class="count-particles">
+  <span class="js-count-particles">--</span> particles
+</div>
+
+<!-- particles.js container -->
+<div id="particles-js"></div>
+
+<!-- scripts -->
+<script src="../particles.js"></script>
+<script src="js/app.js"></script>
+
+<!-- stats.js -->
+<script src="js/lib/stats.js"></script>
+<script>
+  var count_particles, stats, update;
+  stats = new Stats;
+  stats.setMode(0);
+  stats.domElement.style.position = 'absolute';
+  stats.domElement.style.left = '0px';
+  stats.domElement.style.top = '0px';
+  document.body.appendChild(stats.domElement);
+  count_particles = document.querySelector('.js-count-particles');
+  update = function() {
+    stats.begin();
+    stats.end();
+    if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+      count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+    }
+    requestAnimationFrame(update);
+  };
+  requestAnimationFrame(update);
+</script>
+
+</body>
+</html>
