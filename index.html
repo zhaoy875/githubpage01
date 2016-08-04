@@ -59,11 +59,11 @@
 </head>
 <body>
 
-<div class="indexpage">
+<div id="scene" class="indexpage">
 	
-	<div class="zy_title">前端开发</div>
-	<div class="myinfo">
-		<!-- ul>li.item*5>dl>dt.title+dd.value -->
+	<div class="layer" data-depth="1.00" class="zy_title">前端开发</div>
+	<div class="layer" data-depth="0.80" class="myinfo">
+		<!-- .myinfo>ul>li.item*5>dl>dt.title+dd.value -->
 		<ul>
 			<li class="item">
 				<dl>
@@ -94,8 +94,42 @@
 					<dt class="title">专业技能</dt>
 					<dd class="value">css3,html5,javascript</dd>
 					<dd class="value">js库jquery,前端ui框架bootstrap,react+vue.js</dd>
-					<dd class="value">较丰富的移动端适配及移动端浏览器兼容性处理经验</dd>
+					<dd class="value">较丰富的移动端浏览器适配和兼容性经验</dd>
 					<dd class="value">前端工程自动化gulp</dd>
+				</dl>
+			</li>
+		</ul>
+	</div>
+	<div class="layer" data-depth="0.60" class="myinfo">
+		<ul>
+			<li class="item">
+				<dl>
+					<dt class="title"></dt>
+					<dd class="value"></dd>
+				</dl>
+			</li>
+			<li class="item">
+				<dl>
+					<dt class="title"></dt>
+					<dd class="value"></dd>
+				</dl>
+			</li>
+			<li class="item">
+				<dl>
+					<dt class="title"></dt>
+					<dd class="value"></dd>
+				</dl>
+			</li>
+			<li class="item">
+				<dl>
+					<dt class="title"></dt>
+					<dd class="value"></dd>
+				</dl>
+			</li>
+			<li class="item">
+				<dl>
+					<dt class="title"></dt>
+					<dd class="value"></dd>
 				</dl>
 			</li>
 		</ul>
@@ -109,15 +143,18 @@
   <span class="js-count-particles">--</span> particles
 </div>
 
+<script src="js/modernizr.js"></script>
+
 <!-- particles.js container -->
 <div id="particles-js"></div>
 
 <!-- scripts -->
-<script src="js/particles.min.js"></script>
+<!--<script src="js/particles.min.js"></script>-->
 <script src="js/app.js"></script>
 
 <!-- stats.js -->
 <script src="js/lib/stats.js"></script>
+<!--
 <script>
   var count_particles, stats, update;
   stats = new Stats;
@@ -137,6 +174,21 @@
   };
   requestAnimationFrame(update);
 </script>
+-->
+<script src="js/parallax.js"></script>
+
+<script>
+	//时差场景
+	var scene = document.getElementById('scene');
+	var parallax = new Parallax(scene);
+</script>
+
+<!--移动端console-->
+<script src="js/eruda.min.js"></script>
+<script>
+	eruda.init();
+</script>
+<!--移动端console-->
 
 </body>
 </html>
